@@ -1,5 +1,5 @@
 # We're using Debian Slim Buster image
-FROM python:3.8.5-slim-buster
+FROM python:3.9.7-slim-buster
 
 ENV PIP_NO_CACHE_DIR 1
 
@@ -64,12 +64,12 @@ RUN apt update && apt upgrade -y && \
 # Pypi package Repo upgrade
 RUN pip3 install --upgrade pip setuptools
 
-# Copy Python Requirements to /root/AnkiVector
+# Copy Python Requirements to /root/Majormax
 RUN git clone -b shiken https://github.com/Damantha126/The-Anki-Vector /root/AnkiVector
-WORKDIR /root/AnkiVector
+WORKDIR /root/Majormax
 
-#Copy config file to /root/AnkiVector/AnkiVector
-COPY ./AnkiVector/sample_config.py ./AnkiVector/config.py* /root/AnkiVector/AnkiVector/
+#Copy config file to /root/Majormax/Majormax
+COPY ./Majormax/sample_config.py ./Majormax/config.py* /root/Majormax/Majormax/
 
 ENV PATH="/home/bot/bin:$PATH"
 
@@ -77,5 +77,5 @@ ENV PATH="/home/bot/bin:$PATH"
 RUN pip3 install -U -r requirements.txt
 
 # Starting Worker
-CMD ["python3","-m","AnkiVector"]
+CMD ["python3","-m","Majormax"]
 
