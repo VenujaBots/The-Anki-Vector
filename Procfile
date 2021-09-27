@@ -1,3 +1,3 @@
-worker: python3 -m AnkiVector
-web: python3 -m AnkiVector
+worker: python3 -m Majormax
+web: python3 -m Majormax
 ps:scale worker=1
