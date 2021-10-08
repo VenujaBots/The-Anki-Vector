@@ -65,7 +65,7 @@ RUN apt update && apt upgrade -y && \
 RUN pip3 install --upgrade pip setuptools
 
 # Copy Python Requirements to /root/Majormax
-RUN git clone -b shiken https://github.com/Damantha126/The-Anki-Vector /root/AnkiVector
+RUN git clone -b shiken https://github.com/VenujaBots/Major-Max /root/MajorMax
 WORKDIR /root/Majormax
 
 #Copy config file to /root/Majormax/Majormax
